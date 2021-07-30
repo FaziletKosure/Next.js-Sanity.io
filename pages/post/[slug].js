@@ -1,5 +1,5 @@
-import imageUrlBuilder from "@sanity/image-url";
 import { useState, useEffect } from "react";
+import imageUrlBuilder from "@sanity/image-url";
 import styles from "../../styles/Post.module.css";
 import BlockContent from "@sanity/block-content-to-react";
 import { Toolbar } from "../../components/toolbar";
@@ -9,7 +9,7 @@ export const Post = ({ title, body, image }) => {
 
   useEffect(() => {
     const imgBuilder = imageUrlBuilder({
-      projectId: "mjoyrhci",
+      projectId: "zo0rgvm4",
       dataset: "production",
     });
 
@@ -24,7 +24,12 @@ export const Post = ({ title, body, image }) => {
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
         <div className={styles.body}>
-          <BlockContent blocks={body} />
+          <BlockContent
+            blocks={body}
+            imageOptions={{ w: 400, h: 340, fit: "max" }}
+            projectId="zo0rgvm4"
+            dataset="production"
+          />
         </div>
       </div>
     </div>
