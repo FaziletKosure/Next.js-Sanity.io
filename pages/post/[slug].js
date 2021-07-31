@@ -26,7 +26,7 @@ export const Post = ({ title, body, image }) => {
         <div className={styles.body}>
           <BlockContent
             blocks={body}
-            imageOptions={{ w: 400, h: 340, fit: "max" }}
+            imageOptions={{ w: 375, h: 540, fit: "max" }}
             projectId="zo0rgvm4"
             dataset="production"
           />
