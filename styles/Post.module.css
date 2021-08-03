@@ -5,6 +5,7 @@
 }
 .mainImage {
   width: 100%;
+  box-shadow: 0px 0px 2px black;
 }
 .body p {
   font-size: 24px;
