@@ -21,6 +21,7 @@ export const Post = ({ title, body, image }) => {
       <Toolbar />
       <div className={styles.main}>
         <h1>{title}</h1>
+
         {imageUrl && <img className={styles.mainImage} src={imageUrl} />}
 
         <div className={styles.body}>
@@ -51,6 +52,7 @@ export const getServerSideProps = async (pageContext) => {
   const url = `https://zo0rgvm4.api.sanity.io/v1/data/query/production?query=${query}`;
 
   const result = await fetch(url).then((res) => res.json());
+
   const post = result.result[0];
 
   if (!post) {
@@ -63,6 +65,8 @@ export const getServerSideProps = async (pageContext) => {
         body: post.body,
         title: post.title,
         image: post.mainImage,
+        // name: post.author.name,
+        // authorImage: post.author.image,
       },
     };
   }

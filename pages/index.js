@@ -46,6 +46,7 @@ export default function Home({ posts }) {
                 className={styles.post}
               >
                 <h3>{p.title}</h3>
+
                 <img className={styles.mainImage} src={p.mainImage} />
               </div>
             ))
